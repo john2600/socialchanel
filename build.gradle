@@ -13,16 +13,21 @@ repositories {
 }
 
 dependencies {
+	//NO JDK
+	implementation('javax.xml.bind:jaxb-api:2.3.1')
+	implementation('org.javassist:javassist:3.23.1-GA')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
-	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+
 }
 
 test {
